@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+  <t t-name="pos_ticket.ProductCardShowPriceAfterName"
+     t-inherit="point_of_sale.ProductCard"
+     t-inherit-mode="extension">
+
+    <!-- Insert price just after the product name -->
+    <xpath expr="//div[hasclass('product-content')]" position="before">
+      <div class="product-price pt-1 fw-bolder text-primary" style="font-size: 0.85rem; line-height: 1; margin-right: 0.35rem; text-align: right;">
+        <t t-if="listPrice">
+          <t t-esc="listPrice"/>
+        </t>
+      </div>
+    </xpath>
+
+  </t>
+
+</templates>
